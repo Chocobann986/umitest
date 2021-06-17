@@ -1,0 +1,133 @@
+<tables>
+  <table name="cms3_filter_index_56_pages_228" charset="utf8" engine="InnoDB">
+    <indexes>
+      <index type="PRIMARY">
+        <field>id</field>
+      </index>
+      <index name="obj_id">
+        <field>obj_id</field>
+      </index>
+      <index name="parent_id">
+        <field>parent_id</field>
+      </index>
+      <index name="type_id">
+        <field>type_id</field>
+      </index>
+      <index name="lang_id">
+        <field>lang_id</field>
+      </index>
+      <index name="domain_id">
+        <field>domain_id</field>
+      </index>
+      <index name="brend">
+        <field>brend</field>
+      </index>
+      <index name="cvet">
+        <field>cvet</field>
+      </index>
+      <index name="cvet_korpusa">
+        <field>cvet_korpusa</field>
+      </index>
+      <index name="material_korpusa">
+        <field>material_korpusa</field>
+      </index>
+      <index name="naznachenie">
+        <field>naznachenie</field>
+      </index>
+      <index name="novoe_pole">
+        <field>novoe_pole</field>
+      </index>
+      <index name="obem_upakovki">
+        <field>obem_upakovki</field>
+      </index>
+      <index name="price">
+        <field>price</field>
+      </index>
+      <index name="proizvoditel">
+        <field>proizvoditel</field>
+      </index>
+      <index name="razmer">
+        <field>razmer</field>
+      </index>
+      <index name="razmer_pitomca">
+        <field>razmer_pitomca</field>
+      </index>
+      <index name="razmer_ramy_dyujmy">
+        <field>razmer_ramy_dyujmy</field>
+      </index>
+      <index name="sezon">
+        <field>sezon</field>
+      </index>
+      <index name="sostav_napolnitelya">
+        <field>sostav_napolnitelya</field>
+      </index>
+      <index name="steklo">
+        <field>steklo</field>
+      </index>
+      <index name="tip">
+        <field>tip</field>
+      </index>
+      <index name="tip_mehanizma">
+        <field>tip_mehanizma</field>
+      </index>
+      <index name="ves">
+        <field>ves</field>
+      </index>
+      <index name="ves_upakovki">
+        <field>ves_upakovki</field>
+      </index>
+      <index name="ves_velosipeda">
+        <field>ves_velosipeda</field>
+      </index>
+      <index name="vid">
+        <field>vid</field>
+      </index>
+      <index name="vmestimost">
+        <field>vmestimost</field>
+      </index>
+      <index name="vozrast">
+        <field>vozrast</field>
+      </index>
+      <index name="vysota">
+        <field>vysota</field>
+      </index>
+      <index name="zastezhka">
+        <field>zastezhka</field>
+      </index>
+    </indexes>
+    <fields>
+      <field attributes="unsigned" not-null="1" name="id" size="10" type="int"/>
+      <field attributes="unsigned" not-null="1" name="obj_id" size="10" type="int"/>
+      <field attributes="unsigned" not-null="1" name="parent_id" size="10" type="int"/>
+      <field attributes="unsigned" not-null="1" name="type_id" size="10" type="int"/>
+      <field attributes="unsigned" not-null="1" name="lang_id" size="10" type="int"/>
+      <field attributes="unsigned" not-null="1" name="domain_id" size="10" type="int"/>
+      <field default="NULL" name="brend" size="255" type="varchar"/>
+      <field default="NULL" name="cvet" size="255" type="varchar"/>
+      <field default="NULL" name="cvet_korpusa" size="255" type="varchar"/>
+      <field default="NULL" name="material_korpusa" size="255" type="varchar"/>
+      <field default="0" name="nalichie_budilnika" size="1" type="tinyint"/>
+      <field default="NULL" name="naznachenie" size="255" type="varchar"/>
+      <field default="NULL" name="novoe_pole" size="255" type="varchar"/>
+      <field default="NULL" name="obem_upakovki" type="double"/>
+      <field default="0" name="price" type="double"/>
+      <field default="NULL" name="proizvoditel" size="255" type="varchar"/>
+      <field default="NULL" name="razmer" size="255" type="varchar"/>
+      <field default="NULL" name="razmer_pitomca" size="255" type="varchar"/>
+      <field default="NULL" name="razmer_ramy_dyujmy" type="double"/>
+      <field default="NULL" name="sezon" size="255" type="varchar"/>
+      <field default="NULL" name="sostav_napolnitelya" size="255" type="varchar"/>
+      <field default="NULL" name="steklo" size="255" type="varchar"/>
+      <field default="NULL" name="tip" size="255" type="varchar"/>
+      <field default="NULL" name="tip_mehanizma" size="255" type="varchar"/>
+      <field default="NULL" name="ves" type="double"/>
+      <field default="NULL" name="ves_upakovki" type="double"/>
+      <field default="NULL" name="ves_velosipeda" type="double"/>
+      <field default="NULL" name="vid" size="255" type="varchar"/>
+      <field default="NULL" name="vmestimost" size="20" type="bigint"/>
+      <field default="NULL" name="vozrast" size="255" type="varchar"/>
+      <field default="NULL" name="vysota" type="double"/>
+      <field default="NULL" name="zastezhka" size="255" type="varchar"/>
+    </fields>
+  </table>
+</tables>
