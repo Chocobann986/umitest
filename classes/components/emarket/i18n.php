@@ -59,6 +59,7 @@
 		'option-social_vkontakte_key' => 'Код',
 		'option-social_vkontakte_testmode' => 'Тестовый режим',
 		'header-emarket-social_networks' => 'Социальные сети',
+		'header-emarket-views' => 'Талоны на ремонт',
 		'header-emarket-orders' => 'Заказы',
 		'header-users-edit-order' => 'Редактирование заказа',
 		'option-stores' => 'Склады',

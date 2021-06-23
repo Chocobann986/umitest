@@ -210,7 +210,7 @@
 			$offset = $limit * $curr_page;
 
 			$sel = new selector('objects');
-			$sel->types('object-type')->name('emarket', 'discount');
+			$sel->types('object-type')->name('emarket', 'views');
 			$sel->limit($offset, $limit);
 			selectorHelper::detectFilters($sel);
 
@@ -220,6 +220,33 @@
 			$this->doData();
 		}
 
+		public function views()
+		{
+			$this->setDataType('list');
+			$this->setActionType('view');
+
+			if ($this->module->ifNotXmlMode()) {
+				$this->setDirectCallError();
+				$this->doData();
+				return true;
+			}
+
+			$limit = getRequest('per_page_limit');
+			$curr_page = Service::Request()->pageNumber();
+			$offset = $limit * $curr_page;
+
+			$sel = new selector('objects');
+			$sel->types('object-type')->name('emarket', 'views');
+			$sel->limit($offset, $limit);
+			selectorHelper::detectFilters($sel);
+
+			$this->setDataRange($limit, $offset);
+			$data = $this->prepareData($sel->result(), 'objects');
+			$this->setData($data, $sel->length());
+			$this->doData();
+		}
+
+		
 		/**
 		 * Изменяет активность объектов модуля:
 		 *
@@ -1341,6 +1368,7 @@
 					'boolean:payment' => null,
 					'boolean:delivery' => null,
 					'boolean:discounts' => null,
+					'boolean:views' => null,
 					'boolean:delivery-with-address' => null,
 					'boolean:purchasing-one-step' => null,
 					'boolean:drop-customer-after-order-execute' => null,
@@ -1554,12 +1582,17 @@
 		 * @return array
 		 */
 		public function getDatasetConfiguration($param = '') {
+			if ($param === null) $param = 'views';
 			$param = $param ?: 'list';
 			switch ($param) {
 				case 'discounts': {
 					$loadMethod = 'discounts';
 					$objectType = 'discount';
 					break;
+				}
+				case 'views' : {
+					$loadMethod = 'views';
+					$objectType = 'view';
 				}
 				case 'orders': {
 					$loadMethod = 'orders';
@@ -1574,6 +1607,11 @@
 				case 'payment': {
 					$loadMethod = 'payment';
 					$objectType = 'payment';
+					break;
+				}
+				case 'tickets': {
+					$loadMethod = 'view_repair_tickets';
+					$objectType = 'view_repair_ticket';
 					break;
 				}
 				case 'stores': {

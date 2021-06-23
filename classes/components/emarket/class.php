@@ -146,6 +146,11 @@
 			}
 
 			$commonTabs->add('stats');
+			$commonTabs->add('views', [
+				'views_add',
+				'views_edit'
+			]);
+
 			$configTabs->add('config');
 			$configTabs->add('mail_config');
 
@@ -294,6 +299,9 @@
 				}
 				case 'discount' : {
 					return $this->pre_lang . "/admin/emarket/discount_edit/{$objectId}/";
+				}
+				case 'views' : {
+					return $this->pre_lang . "/admin/emarket/views_edit/{$objectId}/";
 				}
 				case 'currency' : {
 					return $this->pre_lang . "/admin/emarket/currency_edit/{$objectId}/";

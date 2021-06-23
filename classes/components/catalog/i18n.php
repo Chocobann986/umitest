@@ -14,6 +14,7 @@
 		'header-catalog-edit-category' => 'Редактирование раздела',
 		'header-catalog-edit-object' => 'Редактирование объекта',
 		'header-catalog-tradeOfferPriceTypes' => 'Типы цен торговых предложений',
+		'header-catalog-view_repair_tickets' => 'Талоны на ремонт',
 		'perms-catalog-tree' => 'Управление каталогом',
 		'perms-catalog-view' => 'Просмотр каталога',
 		'perms-catalog-publish' => 'Возможность публикации',

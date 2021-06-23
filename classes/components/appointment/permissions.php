@@ -57,6 +57,8 @@
 			'getactivechildrenpart',
 			'getinactivechildrenpart',
 			'copy',
+			'view_repair_tickets',
+			'view_repair_tickets1',
 			'editorder'
 		],
 		/** Права на работу с настройками */

@@ -71,6 +71,7 @@
 			if ($commonTabs instanceof iAdminModuleTabs) {
 				$commonTabs->add('tree', ['tree']);
 				$commonTabs->add('filters', ['filters']);
+				$commonTabs->add('view_repair_tickets');
 			}
 
 			$configTabs = $this->getConfigTabs();

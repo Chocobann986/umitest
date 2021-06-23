@@ -17,6 +17,8 @@
 		'header-appointment-addEmployee' => 'Создание сотрудника',
 		'header-appointment-editEmployee' => 'Редактирование сотрудника',
 		'header-appointment-serviceWorkingTime' => 'Расписание работы сервиса',
+		'header-appointment-view_repair_tickets' => 'Талоны на ремонт',
+		'header-appointment-view_repair_tickets1' => 'Талоны на ремонт (test)',
 		'perms-appointment-enroll' => 'Права на запись',
 		'perms-appointment-manage' => 'Права на управление данными для записи',
 		'perms-appointment-config' => 'Права на работу с настройками',
