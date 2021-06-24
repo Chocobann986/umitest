@@ -76,4 +76,21 @@ class AppointmentCustomAdmin
 		$entities = $this->module->getEntities($serviceName, $fieldsKeys);
 		$this->module->printJson($entities);
 	}
+
+	/**
+	 * Возвращает данные конфигурации административного интерфейса
+	 * @param string $param контрольный параметр
+	 * @return array
+	 */
+	public function getDatasetConfiguration($param = '')
+	{
+		$param = ($param === null) ? 'page' : $param;
+		switch ($param) {
+			case 'page': {
+					return $this->module->getPageNewConfig();
+				}
+		}
+	}
+
+	
 }

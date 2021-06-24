@@ -80,6 +80,7 @@
 				$commonTabs->add('users_list');
 				$commonTabs->add('groups_list');
 				$commonTabs->add('authorsList');
+				$commonTabs->add('repair_tickets');
 			}
 
 			return $this;

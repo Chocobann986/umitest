@@ -1009,6 +1009,9 @@ use UmiCms\Service;
 				case 'page' : {
 					return $this->getPageConfig();
 				}
+				default : {
+					return $this->module->getPageNewConfig();
+				}
 			}
 		}
 
@@ -1025,6 +1028,10 @@ use UmiCms\Service;
 		/** Возвращает конфиг вкладки "Сотрудники" в формате JSON для табличного контрола */
 		public function flushEmployeeDataConfig() {
 			$this->module->printJson($this->getEmployeeConfig());
+		}
+
+		public function flushRepairTicketsDataConfig() {
+			$this->module->printJson($this->getRepairTicketsConfig());
 		}
 
 		/**
@@ -1199,6 +1206,57 @@ use UmiCms\Service;
 			];
 		}
 
+		protected function getRepairTicketsConfig(){
+			return [
+				'methods' => [
+					[
+						'title' => getLabel('smc-load'),
+						'forload' => true,
+						'module' => 'appointment',
+						'type' => 'load',
+						'name' => 'view_repair_tickets'
+					],
+					[
+						'title' => getLabel('js-permissions-edit'),
+						'module' => 'appointment',
+						'type' => 'edit',
+						'name' => 'editEmployee'
+					],
+					[
+						'title' => getLabel('js-confirm-unrecoverable-yes'),
+						'module' => 'appointment',
+						'type' => 'delete',
+						'name' => 'deleteEmployees'
+					],
+					[
+						'title' => getLabel('js-confirm-unrecoverable-yes'),
+						'module' => 'appointment',
+						'type' => 'saveField',
+						'name' => 'saveEmployeeField'
+					]
+				],
+				'default' => 'name[250px]|photo[150px]|description[350px]',
+				'fields' => [
+					[
+						'name' => 'name',
+						'title' => getLabel('label-field-employee-name', 'appointment'),
+						'type' => 'string',
+					],
+					[
+						'name' => 'photo',
+						'title' => getLabel('label-field-employee-photo', 'appointment'),
+						'type' => 'image',
+						'filterable' => 'false'
+					],
+					[
+						'name' => 'description',
+						'title' => getLabel('label-field-employee-description', 'appointment'),
+						'type' => 'string',
+					]
+				]
+			];
+		}
+		
 		/**
 		 * Возвращает настройки для табличного контрола на вкладке "Сотрудники"
 		 * @return array
@@ -1251,6 +1309,52 @@ use UmiCms\Service;
 						'type' => 'string',
 					]
 				]
+			];
+		}
+
+		protected function getPageNewConfig() {
+			$umiObjectsTypes = umiObjectTypesCollection::getInstance();
+			$typeId = $umiObjectsTypes->getTypeIdByGUID('repair-ticket');
+			return [
+				'methods' => [
+					[
+						'title' => getLabel('smc-load'),
+						'forload' => true,
+						'module' => 'appointment',
+						'#__name' => 'view_repair_tickets'
+					],
+					[
+						'title' => getLabel('smc-delete'),
+						'module' => 'appointment',
+						'#__name' => 'del',
+						'aliases' => 'tree_delete_element,delete,del'
+					],
+					[
+						'title' => getLabel('smc-activity'),
+						'module' => 'appointment',
+						'#__name' => 'activity',
+						'aliases' => 'tree_set_activity,activity'
+					],
+					[
+						'title' => getLabel('smc-copy'),
+						'module' => 'appointment',
+						'#__name' => 'copy',
+						'aliases' => 'tree_copy_element,copy'
+					],
+				],
+				'types' => [
+					[
+						'common' => 'true',
+						'id' => $typeId
+					]
+				],
+				'stoplist' => [
+					'locktime',
+					'lockuser',
+					'rate_voters',
+					'rate_sum'
+				],
+				'default' => 'name[400px]'
 			];
 		}
 

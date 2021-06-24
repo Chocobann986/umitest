@@ -63,7 +63,7 @@
 				$commonTabs->add('services');
 				$commonTabs->add('employees');
 				$commonTabs->add('pages');
-				$commonTabs->add('view_repair_tickets', ['str']);
+				$commonTabs->add('view_repair_tickets');
 			}
 
 			return $this;

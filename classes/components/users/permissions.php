@@ -53,7 +53,8 @@
 			'edit',
 			'activity',
 			'choose_perms',
-			'authorsList'
+			'authorsList',
+			'repair_tickets'
 		],
 		/** Права на просмотр профиля пользователей */
 		'profile' => [
