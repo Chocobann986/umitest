@@ -64,8 +64,8 @@ class UsersCustomAdmin
       $sel = new selector('objects');
       $sel->types('object-type')->guid('repair-ticket');
       $sel->limit($offset, $limit);
+	  
       selectorHelper::detectFilters($sel);
-
       $result = $sel->result();
       $total = $sel->length();
 

@@ -592,7 +592,7 @@ class UsersAdmin
 			$loadMethod = 'authorsList';
 			$type = 'author';
 			$default = 'name[400px]';
-		} else {
+		} elseif ($param == 'repair-ticket') {
 			$loadMethod = 'repair_tickets';
 			$type = 'repair_tickets'; //Здесь было неправильно указано имя, поэтому не подгружались вкладки
 			$default = 'name[400px]|malfunction[250px]|description[250px]|photo[250px]|acceptance_date[250px]|status[250px]'; // Стандартные включённые поля и их размеры в пикселях
