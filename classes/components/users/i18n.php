@@ -32,6 +32,7 @@
 		'header-users-edit-author' => 'Редактирование автора',
 		'header-users-add-author' => 'Добавление автора',
 		'header-users-authorsList' => 'Авторы публикаций',
+		'header-users-repair_tickets' => 'Талоны на ремонт',
 		'label-add-author' => 'Добавить автора',
 		'label-add-user' => 'Добавить пользователя',
 		'label-do-search' => 'Искать',

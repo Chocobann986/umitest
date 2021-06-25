@@ -105,6 +105,7 @@
 
 			array_unshift($params, $user);
 			array_unshift($params, $link);
+
 			umiEventFeed::create($eventType, $params, $elementId, $objectId);
 
 			$maxDays = (int) Service::Registry()->get('//modules/events/max-days-storing-events');

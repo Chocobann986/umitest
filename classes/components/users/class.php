@@ -606,8 +606,8 @@
 
 			$ownerGUID = $owner->getTypeGUID();
 
-			if ($ownerGUID !== 'users-user' && $ownerGUID !== 'users-users') {
-				throw new publicAdminException(__METHOD__ . ': user or group id expected');
+			if ($ownerGUID !== 'users-user' && $ownerGUID !== 'users-users' && $ownerGUID !== 'repair-ticket') {
+				throw new publicAdminException(__METHOD__ . ': user or group id expected.');
 			}
 
 			if (!is_string($mode)) {
@@ -948,6 +948,7 @@
 			if ($type == 'author') {
 				return $this->pre_lang . '/admin/data/guide_item_edit/' . $objectId . '/';
 			}
+			// return $this->pre_lang . '/admin/data/guide_item_edit/' . $objectId . '/';
 			return $this->pre_lang . '/admin/users/edit/' . $objectId . '/';
 		}
 

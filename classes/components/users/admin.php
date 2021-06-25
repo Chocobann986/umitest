@@ -9,7 +9,7 @@ class UsersAdmin
 	use baseModuleAdmin;
 
 	/** @const array TYPE_NAME_LIST список названий типов данных с которыми работает модуль */
-	const TYPE_NAME_LIST = ['user', 'users', 'author', 'repair_ticket'];
+	const TYPE_NAME_LIST = ['user', 'users', 'author', 'repair_tickets'];
 
 	/** @var users $module */
 	public $module;
@@ -594,11 +594,10 @@ class UsersAdmin
 			$default = 'name[400px]';
 		} else {
 			$loadMethod = 'repair_tickets';
-			$type = 'repair_ticket';
-			$default = 'name[400px]';
+			$type = 'repair_tickets'; //Здесь было неправильно указано имя, поэтому не подгружались вкладки
+			$default = 'name[400px]|malfunction[250px]|description[250px]|photo[250px]|acceptance_date[250px]|status[250px]'; // Стандартные включённые поля и их размеры в пикселях
 		}
 
-		
 
 		return [
 			'methods' => [
@@ -639,7 +638,7 @@ class UsersAdmin
 			'types' => [
 				[
 					'common' => 'true',
-					'id' => $type
+					'id' => $type 
 				]
 			],
 			'stoplist' => [
