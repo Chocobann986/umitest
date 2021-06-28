@@ -1641,7 +1641,7 @@
 			}
 
 			if ($name === null) {
-				throw new publicAdminException("Require 'name' param in _REQUEST array.");
+				throw new publicAdminException("Require 'name' param in _REQUEST array. Name - null");
 			}
 
 			$module = get_class($this->module);

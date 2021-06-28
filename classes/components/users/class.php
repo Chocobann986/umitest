@@ -607,7 +607,7 @@
 			$ownerGUID = $owner->getTypeGUID();
 
 			if ($ownerGUID !== 'users-user' && $ownerGUID !== 'users-users' && $ownerGUID !== 'repair-ticket') {
-				throw new publicAdminException(__METHOD__ . ': user or group id expected.');
+				throw new publicAdminException(__METHOD__ . ': user or group id or repair ticket expected.');
 			}
 
 			if (!is_string($mode)) {

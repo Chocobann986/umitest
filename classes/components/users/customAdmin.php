@@ -75,4 +75,8 @@ class UsersCustomAdmin
       $this->module->setData($data, $total);
       $this->module->doData();
     }
+
+	public function printText(){
+		print_r('Hello world');
+	}
 }

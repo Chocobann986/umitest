@@ -30,6 +30,7 @@
 		'header-users-edit-user' => 'Редактирование пользователя',
 		'header-users-edit-users' => 'Редактирование группы пользователей',
 		'header-users-edit-author' => 'Редактирование автора',
+		'header-users-edit-repair_tickets' => 'Редактирование талона на ремонт',
 		'header-users-add-author' => 'Добавление автора',
 		'header-users-authorsList' => 'Авторы публикаций',
 		'header-users-repair_tickets' => 'Талоны на ремонт',
