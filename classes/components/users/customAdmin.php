@@ -16,32 +16,6 @@ class UsersCustomAdmin
 	 * @throws expectObjectException
 	 * @throws selectorException
 	 */
-/* 	public function repair_tickets()
-	{
-		$this->module->setDataType('list');
-		$this->module->setActionType('view');
-
-		if ($this->module->ifNotXmlMode()) {
-			$this->module->setDirectCallError();
-			$this->module->doData();
-			return true;
-		}
-
-
-		$limit = getRequest('per_page_limit');
-		$curr_page = Service::Request()->pageNumber();
-		$offset = $limit * $curr_page;
-
-		$sel = Service::SelectorFactory()->createObjectTypeName('users', 'repair_tickets');
-		$sel->limit($offset, $limit);
-		selectorHelper::detectFilters($sel);
-
-		$this->module->setDataRange($limit, $offset);
-		$data = $this->module->prepareData($sel->result(), 'objects');
-
-		$this->module->setData($data, $sel->length());
-		$this->module->doData();
-	} */
 
 	public function repair_tickets() {
       $this->module->setDataType('list');
@@ -52,10 +26,6 @@ class UsersCustomAdmin
         $this->module->doData();
         return true;
       }
-
-      $limit = getRequest('per_page_limit');
-      $curr_page = (int) getRequest('p');
-      $offset = $limit * $curr_page;
 
       $limit = getRequest('per_page_limit');
       $pageNumber = Service::Request()->pageNumber();

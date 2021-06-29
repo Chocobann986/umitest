@@ -107,15 +107,7 @@ function getTicketFromSelector($sel)
 function deleteTicket($object_id)
 {
     $objectsCollection = umiObjectsCollection::getInstance();
-    $event = new umiEventPoint('systemDeleteObject');
-    $event->addRef('object', $object);
-    $event->setMode('before');
-    $event->call();
-
     $result = $objectsCollection->delObject($object_id);
-
-    $event->setMode('after');
-    $event->call();
 
     if ($result) {
         header("Status: 200 Ok");
@@ -139,7 +131,6 @@ function createTicket($name, $malfaction, $description = false, $photo = false, 
     $objectId = $objectsCollection->addObject($name, $typeId);
     $object = $objectsCollection->getObject($objectId);
 
-    $object->setValue('nazvanie', $object->getName());
     $object->setValue('malfunction', $malfaction);
     $object->setValue('description', $description);
     $object->setValue('photo', $photo);
